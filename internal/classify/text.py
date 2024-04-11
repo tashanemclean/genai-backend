@@ -1,27 +1,30 @@
-import openai
+from openai import OpenAI
+
 from ..config import config
 
-openai.api_key = config["OPEN_API_KEY"]
+client = OpenAI(
+    api_key=config["OPEN_API_KEY"]
+)
 
 DEFAULT_TEMPERATURE = 0
 DEFAULT_MAX_TOKENS = 500
 DEFAULT_MODEL = "gpt-3.5-turbo"
 
 class Prompt:
-    def __init__(self, prompt, model: str = DEFAULT_MODEL, max_tokens=DEFAULT_MAX_TOKENS, temperature=DEFAULT_TEMPERATURE):
-        self.prompt = prompt
+    def __init__(self, text_input, model: str = DEFAULT_MODEL, max_tokens=DEFAULT_MAX_TOKENS, temperature=DEFAULT_TEMPERATURE):
+        self.text_input = text_input
         # TODO handle role class types
         self.messages = [
-            {"role": "user", "content": self.prompt}
+            {"role": "user", "content": self.text_input}
         ]
         self.model = model
         self.max_tokens = max_tokens
         self.temperature = temperature
         
     def get(self):
-        resp = openai.ChatCompletion.create(
+        resp = client.completions.create(
             model=self.model,
-            messages=self.messages,
+            prompt=self.messages,
             temperature=self.temperature,
             max_tokens=self.max_tokens
         )
