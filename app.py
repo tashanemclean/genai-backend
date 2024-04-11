@@ -11,7 +11,7 @@ def main():
     app.run(debug=True, host=config.config["HOST"], port=config.config["PORT"])
 
 @app.route('/api/text', methods=['POST'])
-def classify_text():
+def text_prompt():
     param = request.form.get("text")
 
     result = text.Prompt(param).get()
