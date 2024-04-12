@@ -1,5 +1,8 @@
 # genai-backend
 
+This microservice is a backend service abstraction for OpenAI to be used as a
+rest api for [genai-rest-api](https://github.com/tashanemclean/genai-rest-api)
+
 ## Section 1: Local Development Environment Setup
 
 ### Setup Virtual Environment
