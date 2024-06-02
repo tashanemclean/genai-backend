@@ -53,6 +53,28 @@ To run , run:
 $ python app.py
 ```
 
+## Usage example
+
+The ClassifyText api can be tested via http POST to /v1/classifytext with text
+as payload.
+
+```
+curl --location 'http://localhost:5000/api/text' \
+--header 'Content-Type: application/json' \
+--data '{
+    "text": "When was the movie Avatar released?"
+}'
+```
+
+### Example Response
+
+```
+{
+  "movie": "Avatar",
+  "release_date": "December 18, 2009"
+}
+```
+
 ## Limitations
 
 Take care when exceeding your plan quota, the api will fail and you may need to
