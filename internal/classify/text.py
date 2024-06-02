@@ -14,7 +14,7 @@ class Prompt:
     def __init__(self, text_input: str, model: str = DEFAULT_MODEL, max_tokens=DEFAULT_MAX_TOKENS, temperature=DEFAULT_TEMPERATURE):
         self.text_input = text_input
         self.messages = [
-            {"role": "system", "content": "You are a helpful who creates activity calendars for up to 31 days in specific locations that I will ask you for and return only the activities results in JSON format"},
+            {"role": "system", "content": "You are a helpful assistant. Your goal is to answer questions and provide results in JSON format"},
             {"role": "user", "content": self.text_input}
         ]
         self.model = model
