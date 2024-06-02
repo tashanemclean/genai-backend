@@ -15,7 +15,7 @@ def main():
 
 @app.route('/_health')
 def health():
-    return Response({"App": "Calendara Backend", "Version": "0.1", "Message": "OK"}, mimetype="application/json", status=200)
+    return Response({"App": "GenAI Backend", "Version": "0.1", "Message": "OK"}, mimetype="application/json", status=200)
 
 @app.route('/api/text', methods=['POST'])
 def text_prompt():
