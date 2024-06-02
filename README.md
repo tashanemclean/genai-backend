@@ -55,8 +55,7 @@ $ python app.py
 
 ## Usage example
 
-The ClassifyText api can be tested via http POST to /v1/classifytext with text
-as payload.
+The api can be tested via http POST to /api/text with text as payload.
 
 ```
 curl --location 'http://localhost:5000/api/text' \
