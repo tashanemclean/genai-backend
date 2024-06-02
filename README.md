@@ -19,22 +19,16 @@ $ python3 -m venv venv
 $ source venv/bin/activate
 ```
 
-### Install OpenAI
+### Install Dependencies
 
 The OpenAI API requires authentication through a secret key that you can
 retrieve [here](https://platform.openai.com/api-keys) once logged in to your
 account.
 
-```
-$ pip install openai
-```
-
 ### Install Dependencies
 
 ```
-$ pip install openai
-$ pip install Flask
-$ pip install python-dotenv
+$ pip install -r requirements.txt
 ```
 
 ### Configure Environment variables
