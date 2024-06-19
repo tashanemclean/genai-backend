@@ -18,12 +18,13 @@ def health():
     return Response({"App": "GenAI Backend", "Version": "0.1", "Message": "OK"}, mimetype="application/json", status=200)
 
 @app.route('/api/text', methods=['POST'])
-def text_prompt():
+def prompt_completions():
     form_data = request.get_json()
-    param = form_data["text"]
-    result = text.Prompt(param).get()
+    prompt = form_data["text"]
+    result = text.Prompt(prompt)
+    content = result.get()
     log.info("classify_text request")
-    return Response(result[0].message.content, mimetype="application/json", status=200)
+    return Response(content[0].message.content, mimetype="application/json", status=200)
 
     
 if __name__ == "__main__":
